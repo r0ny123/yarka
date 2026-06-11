@@ -40,6 +40,6 @@ class ClosableDialog(QtWidgets.QDialog):
             self.layout.addWidget(element)
 
         self.bottom_layout = QtWidgets.QHBoxLayout()
-        self.bottom_layout.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignBottom)
+        self.bottom_layout.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight | QtCore.Qt.AlignmentFlag.AlignBottom)
         self.bottom_layout.addWidget(self.close_btn)
         self.layout.addLayout(self.bottom_layout)

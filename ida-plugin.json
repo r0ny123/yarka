@@ -5,7 +5,7 @@
       "entryPoint": "yarka.py",
       "categories": ["malware-analysis", "ui-ux-and-visualization"],
       "logoPath": "images/logo.png",
-      "idaVersions": ">=8.3",
+      "idaVersions": ">=9.2",
       "description" : "IDA plugin with no dependencies to easily create YARA signatures by selecting a set of instructions, strings or binary data",
       "version": "0.7.2",
       "license": "GPL-3.0",

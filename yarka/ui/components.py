@@ -11,12 +11,12 @@ class Checkbox(QtWidgets.QCheckBox):
             on_click = None):
         super().__init__(label)
         
-        self.setCheckState(QtCore.Qt.Checked if default else QtCore.Qt.Unchecked)
+        self.setCheckState(QtCore.Qt.CheckState.Checked if default else QtCore.Qt.CheckState.Unchecked)
         if on_click:
             self.clicked.connect(on_click)
 
     def is_checked(self) -> bool:
-        return self.checkState() == QtCore.Qt.Checked
+        return self.checkState() == QtCore.Qt.CheckState.Checked
 
 
 class Button(QtWidgets.QPushButton):
@@ -52,7 +52,7 @@ class Label(QtWidgets.QLabel):
 
 
 class YaraTextEdit(QtWidgets.QPlainTextEdit):
-    smarten_punctuation = QtCore.pyqtSignal()
+    smarten_punctuation = QtCore.Signal()
 
     def __init__(self, default: str, highlighting: bool = True):
         super().__init__(None)
@@ -62,7 +62,7 @@ class YaraTextEdit(QtWidgets.QPlainTextEdit):
 
         font = QtGui.QFont()
         font.setFamily("Consolas")
-        font.setStyleHint(QtGui.QFont.Monospace)
+        font.setStyleHint(QtGui.QFont.StyleHint.Monospace)
         font.setFixedPitch(True)
         font.setPointSize(10)
         self.setFont(font)
